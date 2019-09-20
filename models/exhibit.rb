@@ -1,3 +1,5 @@
+require_relative('../db/sql_runner.rb')
+
 class Exhibit
 
   attr_reader :id

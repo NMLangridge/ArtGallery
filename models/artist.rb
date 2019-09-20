@@ -1,3 +1,5 @@
+require_relative('../db/sql_runner.rb')
+
 class Artist
 
   attr_reader :id
