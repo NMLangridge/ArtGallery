@@ -10,6 +10,16 @@ get '/' do
   erb(:welcome)
 end
 
+get '/artists' do
+  @artists = Artist.all()
+  erb(:show_artists)
+end
+
+get '/exhibits' do
+  @exhibits = Exhibit.all()
+  erb(:show_exhibits)
+end
+
 get '/manager/new/artist' do
   erb(:new_artist)
 end
