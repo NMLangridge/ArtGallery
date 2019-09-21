@@ -10,7 +10,13 @@ artist1 = Artist.new({
   'last_name' => 'Rothko'
   })
 
+artist2 = Artist.new({
+  'first_name' => 'Frank',
+  'last_name' => 'Bowling'
+  })
+
 artist1.save()
+artist2.save()
 
 exhibit1 = Exhibit.new({
   'title' => 'Red on Maroon',
@@ -28,8 +34,26 @@ exhibit2 = Exhibit.new({
   'artist_id' => artist1.id
   })
 
+exhibit3 = Exhibit.new({
+  'title' => 'Mirror',
+  'year' => 1966,
+  'description' => 'This painting is about aspiration and inclusion.',
+  'category' => 'Painting',
+  'artist_id' => artist2.id
+  })
+
+exhibit4 = Exhibit.new({
+  'title' => 'Sacha Jason Guyana Dreams',
+  'year' => 1989,
+  'description' => 'large scale acrylic painting that evokes places and moods without depicting specific landscapes.',
+  'category' => 'Painting',
+  'artist_id' => artist2.id
+  })
+
 exhibit1.save()
 exhibit2.save()
+exhibit3.save()
+exhibit4.save()
 
 binding.pry
 nil

@@ -24,13 +24,28 @@ class Exhibit
     @id = id
   end
 
-  def artists()
-    sql = "SELECT * FROM artists WHERE id = $1"
-    values = [@id]
-    artists = SqlRunner.run(sql, values)
-    result = artists.map { |artist| Artist.new(artist) }
-    return result
+  def update()
+    sql = "UPDATE exhibits (title, year, description, category, artist_id)
+    VALUES ($1, $2, $3, $4, $5)
+    RETURNING id"
+    values = [@title, @year, @description, @category, @artist_id]
+    exhibit = SqlRunner.run(sql, values).first
+    @id = exhibit['id'].to_i
   end
+
+  def delete()
+    sql = "DELETE FROM exhibits WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  # def artists()
+  #   sql = "SELECT * FROM artists WHERE id = $1"
+  #   values = [@id]
+  #   artists = SqlRunner.run(sql, values)
+  #   result = artists.map { |artist| Artist.new(artist) }
+  #   return result
+  # end
 
   def self.delete_all()
     sql = "DELETE FROM exhibits"
@@ -46,6 +61,14 @@ class Exhibit
   def self.map_items(exhibit)
     result = exhibit.map { |exhibit| Exhibit.new(exhibit) }
     return result
+  end
+
+  def self.find(id)
+    sql ="SELECT * FROM exhibits WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    exhibits = self.new(result.first)
+    return exhibit
   end
 
 end
