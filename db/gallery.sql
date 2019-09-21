@@ -9,9 +9,9 @@ CREATE TABLE artists(
 
 CREATE TABLE exhibits(
   id SERIAL8 PRIMARY KEY,
-  title VARCHAR(255)
-  year INT4
-  description VARCHAR(255)
-  category VARCHAR(255)
+  title VARCHAR(255),
+  year INT4,
+  description VARCHAR(255),
+  category VARCHAR(255),
   artist_id SERIAL8 REFERENCES artists(id) ON DELETE CASCADE
 );

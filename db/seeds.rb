@@ -6,8 +6,8 @@ Artist.delete_all()
 Exhibit.delete_all()
 
 artist1 = Artist.new({
-  'first_name' => 'Mark'
-  'last_name' => 'Rothko',
+  'first_name' => 'Mark',
+  'last_name' => 'Rothko'
   })
 
 artist1.save()
