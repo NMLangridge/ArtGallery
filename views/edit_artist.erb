@@ -1,0 +1,11 @@
+<form method="post" action="/manager/artist/<%= @artist.id %>">
+
+  <label for="first-name">First Name:</label>
+  <input type="text" name="first_name" id="first-name" value="<%= @artist.first_name%>"/>
+
+  <label for="last-name">Last Name:</label>
+  <input type="text" name="last_name" id="last-name" value="<%= @artist.last_name%>"/>
+
+  <input type="submit" value="Edit Artist">
+
+</form>

@@ -22,8 +22,8 @@ class Artist
   end
 
   def update()
-    sql = "UPDATE artists (first_name, last_name)
-    VALUES ($1, $2)
+    sql = "UPDATE artists(first_name, last_name)
+    VALUES($1, $2)
     RETURNING id"
     values = [@first_name, @last_name]
     exhibit = SqlRunner.run(sql, values).first

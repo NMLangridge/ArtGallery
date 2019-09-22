@@ -1,0 +1,35 @@
+<form action="/manager/exhibit/<%= @exhibit.id %>" method="post">
+
+  <label for="title">Title:</label>
+  <input type="text" name="title" id="title" value="<%= @exhibit.title%>"/>
+
+  <label for="year">Year:</label>
+  <input type="number" name="year" id="year" value="<%= @exhibit.year%>"/>
+
+  <label for="description">Description:</label>
+  <input type="text" name="description" id="description" value="<%= @exhibit.description%>"/>
+
+  <label for="category">Category:</label>
+    <select name="category" id="category">
+
+      <option value="Painting"
+      <%= "selected" if @exhibit.category == "Painting" %>
+      >Painting</option>
+
+      <option value="Drawing">
+      <%= "selected" if @exhibit.category == "Drawing" %>
+      >Drawing</option>
+
+      <option value="Sculpture"
+      <%= "selected" if @exhibit.category == "Sculpture" %>
+      >Sculpture</option>
+
+      <option value="Photography"
+      <%= "selected" if @exhibit.category == "Photography" %>
+      >Photography</option>
+
+    </select>
+
+  <input type="submit" value="Edit Exhibit">
+
+</form>

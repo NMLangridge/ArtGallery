@@ -1,8 +1,12 @@
-<%@exhibits.each do |exhibit| %>
+<p>Title: <%= @exhibit.title %></p>
+<p>Year: <%= @exhibit.year %></p>
+<p>Description: <%= @exhibit.description %></p>
+<p>Category: <%= @exhibit.category %></p>
 
-<p>Title: <%=exhibit.title %></p>
-<p>Year: <%=exhibit.year %></p>
-<p>Description: <%=exhibit.description %></p>
-<p>Category: <%=exhibit.category %></p>
+<p><a href="/manager/exhibit/<%= @exhibit.id %>/edit">Edit Exhibit</a></p>
 
-<% end %>
+<form method="post" action="/manager/exhibit/<%= @exhibit.id %>/delete">
+
+  <input type="submit" value="Delete Exhibit"/>
+
+</form>

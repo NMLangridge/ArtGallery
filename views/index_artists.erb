@@ -1,0 +1,8 @@
+<% @artists.each do |artist| %>
+
+  <p>First Name: <%= artist.first_name() %></p>
+  <p>Last Name: <%= artist.last_name() %></p>
+
+  <p><a href="/artists/<%= artist.id %>">Show Artist</a></p>
+
+<% end %>

@@ -1,6 +1,10 @@
-<%@artists.each do |artist| %>
+<p>First Name: <%= @artist.first_name %></p>
+<p>Last Name: <%= @artist.last_name %></p>
 
-<p>First Name: <%=artist.first_name %></p>
-<p>Last Name: <%=artist.last_name %></p>
+<p><a href="/manager/artist/<%= @artist.id %>/edit">Edit Artist</a></p>
 
-<% end %>
+<form method="post" action="/manager/artist/<%= @artist.id %>/delete">
+
+  <input type="submit" value="Delete Artist"/>
+
+</form>
