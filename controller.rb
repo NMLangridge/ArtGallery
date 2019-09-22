@@ -80,7 +80,7 @@ post '/manager/exhibit/:id' do
   redirect to '/exhibits'
 end
 
-post 'manager/exhibit/:id/delete' do
+post '/manager/exhibit/:id/delete' do
   exhibit = Exhibit.find(params[:id])
   exhibit.delete()
   redirect to '/exhibits'
