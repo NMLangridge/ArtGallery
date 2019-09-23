@@ -111,11 +111,31 @@ end
 
 get '/exhibits' do
   @exhibits = Exhibit.all()
+  @artists = Artist.all()
+  erb(:index_exhibits)
+end
+
+get '/exhibits/filter' do
+  artist_id = params["artist_id"].to_i
+  # find the artist with the artist id variable
+  # from that artist, get all their exhibits - assign it to @exhibits
+  artist = Artist.find(artist_id)
+  @exhibits = artist.exhibits()
+  @artists = Artist.all()
   erb(:index_exhibits)
 end
 
 get '/exhibits/:id' do
   @exhibit = Exhibit.find(params[:id])
-  @artists = @exhibit.artists
+  @artists = @exhibit.artists()
   erb(:show_exhibits)
 end
+
+#CATEGORY
+
+# get '/exhibits/filter' do
+#   category = params["category"]
+#   category = Exhibit.find(category)
+#   @exhibits = exhibits.category()
+#   erb(:index_exhibits)
+# end

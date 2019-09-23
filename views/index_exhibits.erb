@@ -1,10 +1,41 @@
+<label for="artist_id">Filter by Artist</label>
+
+<form method="get" action="/exhibits/filter">
+  <select name="artist_id" id="artist_id">
+
+    <% for artist in @artists %>
+    <option value="<%=artist.id%>">
+      <%=artist.first_name%> <%=artist.last_name%>
+    </option>
+    <% end %>
+
+  </select>
+  <input type="submit" value="Filter Artist"/>
+
+</form>
+
+
+
+<label for="category">Filter by Category</label>
+<form method="get" action="/exhibits/filter">
+  <select name="category" id="category">
+    <option value="Painting">Painting</option>
+    <option value="Drawing">Drawing</option>
+    <option value="Sculpture">Sculpture</option>
+    <option value="Photography">Photography</option>
+  </select>
+  <input type="submit" value="Filter Category"/>
+</form>
+
+
+
 <% @exhibits.each do |exhibit| %>
 
-  <p>Title: <%= exhibit.title() %></p>
-  <p>Year: <%= exhibit.year() %></p>
-  <p>Description: <%= exhibit.description() %></p>
-  <p>Category: <%= exhibit.category() %></p>
+<p>Title: <%= exhibit.title() %></p>
+<p>Year: <%= exhibit.year() %></p>
+<p>Description: <%= exhibit.description() %></p>
+<p>Category: <%= exhibit.category() %></p>
 
-  <p><a href="/exhibits/<%= exhibit.id %>">Show Exhibit</a></p>
+<p><a href="/exhibits/<%= exhibit.id %>">Show Exhibit</a></p>
 
 <% end %>
