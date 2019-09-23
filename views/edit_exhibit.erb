@@ -31,8 +31,12 @@
 
     </select>
 
-    <label for="artist_id">Artist ID:</label>
-    <input type="number" name="artist_id" id="artist_id" value="<%= @exhibit.description%>"/>
+    <label for="artist_id">Artist:</label>
+    <select name="artist_id" id="artist_id">
+
+    <% for artist in @artists %>
+      <option value="<%=artist.id%>"><%=artist.first_name%> <%=artist.last_name%></option>
+    <% end %>
 
   <input type="submit" value="Edit Exhibit">
 

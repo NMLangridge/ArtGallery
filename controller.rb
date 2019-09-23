@@ -72,6 +72,7 @@ end
 
 get '/manager/exhibit/:id/edit' do
   @exhibit = Exhibit.find(params[:id])
+  @artists = Artist.all()
   erb(:edit_exhibit)
 end
 
