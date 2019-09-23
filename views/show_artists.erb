@@ -4,18 +4,3 @@
 <% for exhibit in @exhibits %>
   <p><%= "Title:" %> <%= exhibit.title %></p>
 <% end %>
-
-<!--
-<p><a href="/manager/artist/<%= @artist.id %>/edit">Edit Artist</a></p> -->
-
-<form method="post" action="/manager/artist/<%= @artist.id %>/edit">
-
-  <input type="submit" value="Edit Artist"/>
-
-</form>
-
-<form method="post" action="/manager/artist/<%= @artist.id %>/delete">
-
-  <input type="submit" value="Delete Artist"/>
-
-</form>

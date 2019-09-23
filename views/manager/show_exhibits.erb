@@ -6,3 +6,15 @@
 <% for artist in @artists %>
   <p><%= "Artist:" %> <%= artist.first_name %> <%= artist.last_name %></p>
 <% end %>
+
+<form method="get" action="/manager/exhibit/<%= @exhibit.id %>/edit">
+
+  <input type="submit" value="Edit Exhibit"/>
+
+</form>
+
+<form method="post" action="/manager/exhibit/<%= @exhibit.id %>/delete">
+
+  <input type="submit" value="Delete Exhibit"/>
+
+</form>

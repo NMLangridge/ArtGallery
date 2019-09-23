@@ -10,32 +10,36 @@ get '/' do
   erb(:welcome)
 end
 
-#Artists
-
-get '/artists' do
-  @artists = Artist.all()
-  erb(:index_artists)
+get '/manager' do
+  erb(:"manager/index")
 end
 
-get '/artists/:id' do
+#MANAGE ARTISTS
+
+get '/manager/artists' do
+  @artists = Artist.all()
+  erb(:"manager/index_artists")
+end
+
+get '/manager/artists/:id' do
   @artist = Artist.find(params[:id])
   @exhibits = @artist.exhibits
-  erb(:show_artists)
+  erb(:"manager/show_artists")
 end
 
 get '/manager/artist/new' do
-  erb(:new_artist)
+  erb(:"manager/new_artist")
 end
 
 post '/manager/artist/new' do
   @artist = Artist.new(params)
   @artist.save()
-  erb(:create_artist)
+  erb(:"manager/create_artist")
 end
 
-get '/manager/artist/:id/edit' do
+post '/manager/artist/:id/edit' do
   @artist = Artist.find(params[:id])
-  erb(:edit_artist)
+  erb(:"manager/edit_artist")
 end
 
 post '/manager/artist/:id' do
@@ -49,34 +53,34 @@ post '/manager/artist/:id/delete' do
   redirect to '/artists'
 end
 
-#Exhibits
+#MANAGE EXHIBITS
 
-get '/exhibits' do
+get '/manager/exhibits' do
   @exhibits = Exhibit.all()
-  erb(:index_exhibits)
+  erb(:"manager/index_exhibits")
 end
 
-get '/exhibits/:id' do
+get '/manager/exhibits/:id' do
   @exhibit = Exhibit.find(params[:id])
   @artists = @exhibit.artists
-  erb(:show_exhibits)
+  erb(:"manager/show_exhibits")
 end
 
 get '/manager/exhibit/new' do
     @artists = Artist.all()
-  erb(:new_exhibit)
+  erb(:"manager/new_exhibit")
 end
 
 post '/manager/exhibit/new' do
   @exhibit = Exhibit.new(params)
   @exhibit.save()
-  erb(:create_exhibit)
+  erb(:"manager/create_exhibit")
 end
 
 get '/manager/exhibit/:id/edit' do
   @exhibit = Exhibit.find(params[:id])
   @artists = Artist.all()
-  erb(:edit_exhibit)
+  erb(:"manager/edit_exhibit")
 end
 
 post '/manager/exhibit/:id' do
@@ -88,4 +92,30 @@ post '/manager/exhibit/:id/delete' do
   exhibit = Exhibit.find(params[:id])
   exhibit.delete()
   redirect to '/exhibits'
+end
+
+#ARTISTS
+
+get '/artists' do
+  @artists = Artist.all()
+  erb(:index_artists)
+end
+
+get '/artists/:id' do
+  @artist = Artist.find(params[:id])
+  @exhibits = @artist.exhibits
+  erb(:show_artists)
+end
+
+#EXHIBITS
+
+get '/exhibits' do
+  @exhibits = Exhibit.all()
+  erb(:index_exhibits)
+end
+
+get '/exhibits/:id' do
+  @exhibit = Exhibit.find(params[:id])
+  @artists = @exhibit.artists
+  erb(:show_exhibits)
 end
