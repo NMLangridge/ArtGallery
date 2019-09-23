@@ -1,11 +1,18 @@
 <p>First Name: <%= @artist.first_name %></p>
 <p>Last Name: <%= @artist.last_name %></p>
 
-<p><a href="/manager/artist/<%= @artist.id %>/edit">Edit Artist</a></p>
-
 <% for exhibit in @exhibits %>
-  <%= exhibit.title %>
+  <p><%= "Title:" %> <%= exhibit.title %></p>
 <% end %>
+
+<!--
+<p><a href="/manager/artist/<%= @artist.id %>/edit">Edit Artist</a></p> -->
+
+<form method="post" action="/manager/artist/<%= @artist.id %>/edit">
+
+  <input type="submit" value="Edit Artist"/>
+
+</form>
 
 <form method="post" action="/manager/artist/<%= @artist.id %>/delete">
 

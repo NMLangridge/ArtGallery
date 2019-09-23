@@ -3,11 +3,17 @@
 <p>Description: <%= @exhibit.description %></p>
 <p>Category: <%= @exhibit.category %></p>
 
-<p><a href="/manager/exhibit/<%= @exhibit.id %>/edit">Edit Exhibit</a></p>
-
 <% for artist in @artists %>
-  <%= artist.first_name %> <%= artist.last_name %>
+  <p><%= "Artist:" %> <%= artist.first_name %> <%= artist.last_name %></p>
 <% end %>
+
+<!-- <p><a href="/manager/exhibit/<%= @exhibit.id %>/edit">Edit Exhibit</a></p> -->
+
+<form method="get" action="/manager/exhibit/<%= @exhibit.id %>/edit">
+
+  <input type="submit" value="Edit Exhibit"/>
+
+</form>
 
 <form method="post" action="/manager/exhibit/<%= @exhibit.id %>/delete">
 
