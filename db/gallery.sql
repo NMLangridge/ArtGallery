@@ -13,5 +13,5 @@ CREATE TABLE exhibits(
   year INT4,
   description VARCHAR(255),
   category VARCHAR(255),
-  artist_id SERIAL8 REFERENCES artists(id) ON DELETE CASCADE
+  artist_id INT8 REFERENCES artists(id) ON DELETE CASCADE
 );

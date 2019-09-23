@@ -25,12 +25,11 @@ class Exhibit
   end
 
   def update()
-    sql = "UPDATE exhibits (title, year, description, category, artist_id)
-    VALUES ($1, $2, $3, $4, $5)
-    RETURNING id"
-    values = [@title, @year, @description, @category, @artist_id]
-    exhibit = SqlRunner.run(sql, values).first
-    @id = exhibit['id'].to_i
+    sql = "UPDATE exhibits SET (title, year, description, category, artist_id)
+    = ($1, $2, $3, $4, $5)
+    WHERE id = $6"
+    values = [@title, @year, @description, @category, @artist_id, @id]
+    SqlRunner.run(sql, values)
   end
 
   def delete()

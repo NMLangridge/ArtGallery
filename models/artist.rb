@@ -22,12 +22,11 @@ class Artist
   end
 
   def update()
-    sql = "UPDATE artists(first_name, last_name)
-    VALUES($1, $2)
-    RETURNING id"
-    values = [@first_name, @last_name]
-    exhibit = SqlRunner.run(sql, values).first
-    @id = artist['id'].to_i
+    sql = "UPDATE artists SET (first_name, last_name)
+    = ($1, $2)
+    WHERE id = $3"
+    values = [@first_name, @last_name, @id]
+    SqlRunner.run(sql, values)
   end
 
   def delete()
