@@ -5,6 +5,10 @@
 
 <p><a href="/manager/exhibit/<%= @exhibit.id %>/edit">Edit Exhibit</a></p>
 
+<% for artist in @artists %>
+  <%= artist.first_name %> <%= artist.last_name %>
+<% end %>
+
 <form method="post" action="/manager/exhibit/<%= @exhibit.id %>/delete">
 
   <input type="submit" value="Delete Exhibit"/>

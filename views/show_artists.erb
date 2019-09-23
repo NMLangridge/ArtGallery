@@ -3,6 +3,10 @@
 
 <p><a href="/manager/artist/<%= @artist.id %>/edit">Edit Artist</a></p>
 
+<% for exhibit in @exhibits %>
+  <%= exhibit.title %>
+<% end %>
+
 <form method="post" action="/manager/artist/<%= @artist.id %>/delete">
 
   <input type="submit" value="Delete Artist"/>

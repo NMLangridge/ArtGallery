@@ -19,6 +19,7 @@ end
 
 get '/artists/:id' do
   @artist = Artist.find(params[:id])
+  @exhibits = @artist.exhibits
   erb(:show_artists)
 end
 
@@ -57,10 +58,12 @@ end
 
 get '/exhibits/:id' do
   @exhibit = Exhibit.find(params[:id])
+  @artists = @exhibit.artists
   erb(:show_exhibits)
 end
 
 get '/manager/exhibit/new' do
+    @artists = Artist.all()
   erb(:new_exhibit)
 end
 
