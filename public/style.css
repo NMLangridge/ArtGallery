@@ -96,12 +96,7 @@ li a:hover {
   margin: 0 auto;
 }
 
-#pictures {
+.pictures {
   display: flex;
-  flex-wrap: wrap;
-}
-
-#pictures img {
-  display: flex;
-  flex-wrap: wrap;
+  margin: -235px 350px;
 }
