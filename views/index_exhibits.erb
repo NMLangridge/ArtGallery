@@ -1,4 +1,4 @@
-<div id="all-exhibits-list">
+
 
 <label for="artist_id">Filter by Artist</label>
 
@@ -26,16 +26,18 @@
   <input type="submit" value="Filter Category"/>
 </form> -->
 
-<% @exhibits.each do |exhibit| %>
-  <div class="exhibit-in-list">
-<p>Title: <%= exhibit.title() %></p>
-<p>Year: <%= exhibit.year() %></p>
-<p>Description: <%= exhibit.description() %></p>
-<p>Category: <%= exhibit.category() %></p>
+<div id="all-exhibits-list">
 
-<p><a href="/exhibits/<%= exhibit.id %>">Show Exhibit</a></p>
+  <% @exhibits.each do |exhibit| %>
+    <div class="exhibit-in-list">
+      <p>Title: <%= exhibit.title() %></p>
+      <p>Year: <%= exhibit.year() %></p>
+      <p>Description: <%= exhibit.description() %></p>
+      <p>Category: <%= exhibit.category() %></p>
 
-<% end %>
+      <p><a href="/exhibits/<%= exhibit.id %>">Show Exhibit</a></p>
 
-  </div>
+    </div>
+  <% end %>
+
 </div>

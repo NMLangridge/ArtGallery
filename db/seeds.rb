@@ -23,7 +23,8 @@ exhibit1 = Exhibit.new({
   'year' => 1959,
   'description' => 'Intimations of mortality.',
   'category' => 'Painting',
-  'artist_id' => artist1.id
+  'artist_id' => artist1.id,
+  'image_url' => 'https://www.tate.org.uk/art/images/work/T/T01/T01165_10.jpg'
   })
 
 exhibit2 = Exhibit.new({
@@ -31,7 +32,8 @@ exhibit2 = Exhibit.new({
   'year' => 1959,
   'description' => '90% tragedy, 10% hope.',
   'category' => 'Painting',
-  'artist_id' => artist1.id
+  'artist_id' => artist1.id,
+  'image_url' => 'https://www.tate.org.uk/art/images/work/T/T01/T01163_515930_10.jpg'
   })
 
 exhibit3 = Exhibit.new({
@@ -39,7 +41,8 @@ exhibit3 = Exhibit.new({
   'year' => 1966,
   'description' => 'A conflicted figure caught between two worlds.',
   'category' => 'Painting',
-  'artist_id' => artist2.id
+  'artist_id' => artist2.id,
+  'image_url' => 'https://www.tate.org.uk/art/images/work/T/T13/T13936_10.jpg'
   })
 
 exhibit4 = Exhibit.new({
@@ -47,7 +50,8 @@ exhibit4 = Exhibit.new({
   'year' => 1989,
   'description' => 'A vist to Guyana.',
   'category' => 'Painting',
-  'artist_id' => artist2.id
+  'artist_id' => artist2.id,
+  'image_url' => 'https://www.tate.org.uk/art/images/work/T/T12/T12134_10.jpg'
   })
 
 exhibit1.save()
