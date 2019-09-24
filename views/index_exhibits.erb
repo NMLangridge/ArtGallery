@@ -1,3 +1,5 @@
+<div id="all-exhibits-list">
+
 <label for="artist_id">Filter by Artist</label>
 
 <form method="get" action="/exhibits/filter">
@@ -11,12 +13,9 @@
 
   </select>
   <input type="submit" value="Filter Artist"/>
-
 </form>
 
-
-
-<label for="category">Filter by Category</label>
+<!-- <label for="category">Filter by Category</label>
 <form method="get" action="/exhibits/filter">
   <select name="category" id="category">
     <option value="Painting">Painting</option>
@@ -25,12 +24,10 @@
     <option value="Photography">Photography</option>
   </select>
   <input type="submit" value="Filter Category"/>
-</form>
-
-
+</form> -->
 
 <% @exhibits.each do |exhibit| %>
-
+  <div class="exhibit-in-list">
 <p>Title: <%= exhibit.title() %></p>
 <p>Year: <%= exhibit.year() %></p>
 <p>Description: <%= exhibit.description() %></p>
@@ -39,3 +36,6 @@
 <p><a href="/exhibits/<%= exhibit.id %>">Show Exhibit</a></p>
 
 <% end %>
+
+  </div>
+</div>

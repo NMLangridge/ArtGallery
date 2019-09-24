@@ -21,7 +21,7 @@ artist2.save()
 exhibit1 = Exhibit.new({
   'title' => 'Red on Maroon',
   'year' => 1959,
-  'description' => 'large unframed oil painting on a vertically orientated rectangular canvas',
+  'description' => 'Intimations of mortality.',
   'category' => 'Painting',
   'artist_id' => artist1.id
   })
@@ -29,7 +29,7 @@ exhibit1 = Exhibit.new({
 exhibit2 = Exhibit.new({
   'title' => 'Black on Maroon',
   'year' => 1959,
-  'description' => 'large unframed oil painting on a horizontally orientated rectangular canvas',
+  'description' => '90% tragedy, 10% hope.',
   'category' => 'Painting',
   'artist_id' => artist1.id
   })
@@ -37,7 +37,7 @@ exhibit2 = Exhibit.new({
 exhibit3 = Exhibit.new({
   'title' => 'Mirror',
   'year' => 1966,
-  'description' => 'This painting is about aspiration and inclusion.',
+  'description' => 'A conflicted figure caught between two worlds.',
   'category' => 'Painting',
   'artist_id' => artist2.id
   })
@@ -45,7 +45,7 @@ exhibit3 = Exhibit.new({
 exhibit4 = Exhibit.new({
   'title' => 'Sacha Jason Guyana Dreams',
   'year' => 1989,
-  'description' => 'large scale acrylic painting that evokes places and moods without depicting specific landscapes.',
+  'description' => 'A vist to Guyana.',
   'category' => 'Painting',
   'artist_id' => artist2.id
   })

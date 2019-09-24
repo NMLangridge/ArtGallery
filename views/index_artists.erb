@@ -1,8 +1,10 @@
-<% @artists.each do |artist| %>
+<div id="all-artists-list">
+  <% @artists.each do |artist| %>
+    <div class="artist-in-list">
+      <p>First Name: <%= artist.first_name() %></p>
+      <p>Last Name: <%= artist.last_name() %></p>
 
-  <p>First Name: <%= artist.first_name() %></p>
-  <p>Last Name: <%= artist.last_name() %></p>
-
-  <p><a href="/artists/<%= artist.id %>">Show Artist</a></p>
-
-<% end %>
+      <p><a href="/artists/<%= artist.id %>">Show Artist</a></p>
+    </div>
+  <% end %>
+</div>
