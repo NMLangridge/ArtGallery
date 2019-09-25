@@ -1,0 +1,15 @@
+<div id="all-exhibits-list">
+  <% @exhibits.each do |exhibit| %>
+
+  <% if exhibit.category == @category %>
+    <div class="exhibit-in-list">
+      <p>Title: <%= exhibit.title() %></p>
+      <p>Year: <%= exhibit.year() %></p>
+      <p>Description: <%= exhibit.description() %></p>
+      <p>Category: <%= exhibit.category() %></p>
+      <p><a href="/exhibits/<%= exhibit.id %>">Show Exhibit</a></p>
+    </div>
+    <% end %>
+
+  <% end %>
+</div>

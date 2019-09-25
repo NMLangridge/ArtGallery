@@ -2,28 +2,38 @@
 
 <form method="get" action="/exhibits/filter">
   <select name="artist_id" id="artist_id">
-
     <% for artist in @artists %>
     <option value="<%=artist.id%>">
       <%=artist.first_name%> <%=artist.last_name%>
     </option>
     <% end %>
-
   </select>
   <input type="submit" value="Filter Artist"/>
 </form>
 
+<form method="get" action="/exhibits/category/filter">
+  <select name="category" id="category">
+    <% duplicates = [] %>
+    <% for exhibit in @exhibits %>
+      <% unless duplicates.include?(exhibit.category)%>
+    <option value="<%=exhibit.category%>">
+      <%=exhibit.category%>
+    </option>
+      <% duplicates << exhibit.category %>
+      <% end %>
+    <% end %>
+  </select>
+  <input type="submit" value="Filter Category"/>
+</form>
+
 <div id="all-exhibits-list">
   <% @exhibits.each do |exhibit| %>
-
     <div class="exhibit-in-list">
       <p>Title: <%= exhibit.title() %></p>
       <p>Year: <%= exhibit.year() %></p>
       <p>Description: <%= exhibit.description() %></p>
       <p>Category: <%= exhibit.category() %></p>
-
       <p><a href="/exhibits/<%= exhibit.id %>">Show Exhibit</a></p>
     </div>
-
   <% end %>
 </div>

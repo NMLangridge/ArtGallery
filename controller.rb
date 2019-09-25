@@ -123,6 +123,12 @@ get '/exhibits/filter' do
   erb(:index_exhibits)
 end
 
+get '/exhibits/category/filter' do
+  @category = params["category"]
+  @exhibits = Exhibit.all()
+  erb(:index_filtered_exhibits)
+end
+
 get '/exhibits/:id' do
   @exhibit = Exhibit.find(params[:id])
   @artists = @exhibit.artists()
