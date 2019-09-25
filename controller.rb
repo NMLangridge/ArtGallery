@@ -44,13 +44,13 @@ end
 
 post '/manager/artist/:id' do
   Artist.new(params).update()
-  redirect to '/artists'
+  redirect to '/manager/artists'
 end
 
 post '/manager/artist/:id/delete' do
   artist = Artist.find(params[:id])
   artist.delete()
-  redirect to '/artists'
+  redirect to '/manager/artists'
 end
 
 #MANAGE EXHIBITS
@@ -85,13 +85,13 @@ end
 
 post '/manager/exhibit/:id' do
   Exhibit.new(params).update
-  redirect to '/exhibits'
+  redirect to '/manager/exhibits'
 end
 
 post '/manager/exhibit/:id/delete' do
   exhibit = Exhibit.find(params[:id])
   exhibit.delete()
-  redirect to '/exhibits'
+  redirect to '/manager/exhibits'
 end
 
 #ARTISTS
@@ -117,8 +117,6 @@ end
 
 get '/exhibits/filter' do
   artist_id = params["artist_id"].to_i
-  # find the artist with the artist id variable
-  # from that artist, get all their exhibits - assign it to @exhibits
   artist = Artist.find(artist_id)
   @exhibits = artist.exhibits()
   @artists = Artist.all()

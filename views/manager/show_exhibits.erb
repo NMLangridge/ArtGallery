@@ -1,11 +1,18 @@
-<p>Title: <%= @exhibit.title %></p>
-<p>Year: <%= @exhibit.year %></p>
-<p>Description: <%= @exhibit.description %></p>
-<p>Category: <%= @exhibit.category %></p>
+<div id="exhibit-detail"
+  <div class="exhibit-detail"
 
-<% for artist in @artists %>
-  <p><%= "Artist:" %> <%= artist.first_name %> <%= artist.last_name %></p>
-<% end %>
+    <p>Title: <%= @exhibit.title %></p>
+    <p>Year: <%= @exhibit.year %></p>
+    <p>Description: <%= @exhibit.description %></p>
+    <p>Category: <%= @exhibit.category %></p>
+
+    <% for artist in @artists %>
+    <p><%= "Artist:" %> <%= artist.first_name %> <%= artist.last_name %></p>
+    <p><a href="/manager/artists/<%= artist.id %>">Show Artist</a></p>
+    <% end %>
+
+  </div>
+</div>
 
 <form method="get" action="/manager/exhibit/<%= @exhibit.id %>/edit">
 

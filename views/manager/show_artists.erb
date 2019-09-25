@@ -1,9 +1,16 @@
-<p>First Name: <%= @artist.first_name %></p>
-<p>Last Name: <%= @artist.last_name %></p>
+<div id="artist-detail"
+  <div class="artist-detail"
 
-<% for exhibit in @exhibits %>
-  <p><%= "Title:" %> <%= exhibit.title %></p>
-<% end %>
+    <p>First Name: <%= @artist.first_name %></p>
+    <p>Last Name: <%= @artist.last_name %></p>
+
+    <% for exhibit in @exhibits %>
+    <p><%= "Title:" %> <%= exhibit.title %></p>
+    <p><a href="/manager/exhibits/<%= exhibit.id %>">Show Exhibit </a></p>
+    <% end %>
+
+  </div>
+</div>
 
 <form method="post" action="/manager/artist/<%= @artist.id %>/edit">
 

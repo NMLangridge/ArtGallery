@@ -1,20 +1,21 @@
 <div id="exhibit-detail"
-<div class="exhibit-detail"
+  <div class="exhibit-detail"
 
-<p>Title: <%= @exhibit.title %></p>
-<p>Year: <%= @exhibit.year %></p>
-<p>Description: <%= @exhibit.description %></p>
-<p>Category: <%= @exhibit.category %></p>
+  <p>Title: <%= @exhibit.title %></p>
+  <p>Year: <%= @exhibit.year %></p>
+  <p>Description: <%= @exhibit.description %></p>
+  <p>Category: <%= @exhibit.category %></p>
 
-<% for artist in @artists %>
+  <% for artist in @artists %>
   <p><%= "Artist:" %> <%= artist.first_name %> <%= artist.last_name %></p>
-<% end %>
+  <p><a href="/artists/<%= artist.id %>">Show Artist</a></p>
+  <% end %>
 
-<div id="pictures">
-  <img src="<%=@exhibit.image_url%>"
-  width ="500px"
-  class = "pictures"/>
-</div>
+  <div id="pictures">
+    <img src="<%=@exhibit.image_url%>"
+    width ="500px"
+    class = "pictures"/>
+  </div>
 
-</div>
+  </div>
 </div>

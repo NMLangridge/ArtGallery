@@ -1,7 +1,7 @@
 body {
  font-family: 'Quicksand', sans-serif;
  font-weight: 300;
- background-color: #FFFFFF;
+ background-color: #DCDCDC;
  color: #000000;
  font-size: 20px;
 }
@@ -23,7 +23,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #FFFFFF;
+  background-color: #DCDCDC;
 }
 
 li {
@@ -32,7 +32,7 @@ li {
 
 li a {
   display: block;
-  color: #FF8C00;
+  color: #FFA425;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
@@ -41,8 +41,8 @@ li a {
 }
 
 li a:hover {
-  color: #FFFFFF;
-  background-color: #FF8C00;
+  color: #DCDCDC;
+  background-color: #FFA425;
 }
 
 #all-artists-list {
