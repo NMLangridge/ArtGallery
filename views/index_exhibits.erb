@@ -1,5 +1,3 @@
-<label for="artist_id">Filter by Artist</label>
-
 <form method="get" action="/exhibits/filter">
   <select name="artist_id" id="artist_id">
     <% for artist in @artists %>
@@ -8,7 +6,7 @@
     </option>
     <% end %>
   </select>
-  <input type="submit" value="Filter Artist"/>
+  <input type="submit" value="Filter by Artist"/>
 </form>
 
 <form method="get" action="/exhibits/category/filter">
@@ -23,7 +21,7 @@
       <% end %>
     <% end %>
   </select>
-  <input type="submit" value="Filter Category"/>
+  <input type="submit" value="Filter by Category"/>
 </form>
 
 <div id="all-exhibits-list">

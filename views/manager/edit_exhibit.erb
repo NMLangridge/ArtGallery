@@ -12,7 +12,6 @@
   <label for="category">Category:</label>
 
     <select name="category" id="category" selected="<%=@exhibit.category %>">
-
       <option value="Painting"
       <%= "selected" if @exhibit.category == "Painting" %>
       >Painting</option>
@@ -31,13 +30,13 @@
 
     </select>
 
-    <label for="artist_id">Artist:</label>
+  <label for="artist_id">Artist:</label>
 
     <select name="artist_id" id="artist_id" selected="<%= @exhibit.artist_id %>">
 
     <% for artist in @artists %>
       <option value="<%=artist.id%>"
-              <%= "selected" if @exhibit.artist_id == artist.id %>>
+        <%= "selected" if @exhibit.artist_id == artist.id %>>
         <%=artist.first_name%> <%=artist.last_name%>
       </option>
     <% end %>
